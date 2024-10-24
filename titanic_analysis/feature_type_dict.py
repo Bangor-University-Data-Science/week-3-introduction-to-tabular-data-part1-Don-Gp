@@ -1,3 +1,5 @@
+import pandas as pd
+
 def create_feature_type_dict(df):
     """
     Classifies features into numerical (continuous or discrete) and categorical (nominal or ordinal).
@@ -10,12 +12,13 @@ def create_feature_type_dict(df):
     """
     feature_types = {
         'numerical': {
-            'continuous': [],  # Fill with continuous numerical features
-            'discrete': []  # Fill with discrete numerical features
+            'continuous': ['Age', 'Fare'],
+            'discrete': ['SibSp', 'Parch']
         },
         'categorical': {
-            'nominal': [],  # Fill with nominal categorical features
-            'ordinal': []  # Fill with ordinal categorical features
+            'nominal': ['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked'],
+            'ordinal': ['Pclass']
         }
     }
     return feature_types
+
